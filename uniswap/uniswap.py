@@ -1623,7 +1623,10 @@ class Uniswap:
         """Retrieves the WETH address from the contracts (which may vary between chains)."""
         if self.version == 2:
             # Contract calls should always return checksummed addresses
-            address: ChecksumAddress = self.router.functions.WETH().call()
+            try:
+                address: ChecksumAddress = self.router.functions.WETH().call()
+            except:
+                address: ChecksumAddress = self.router.functions.WNativeToken().call()
         elif self.version == 3:
             address = self.router.functions.WETH9().call()
         else:
