@@ -15,6 +15,13 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "WNativeToken",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       { "internalType": "address", "name": "tokenA", "type": "address" },
       { "internalType": "address", "name": "tokenB", "type": "address" },
