@@ -1628,7 +1628,10 @@ class Uniswap:
             except:
                 address: ChecksumAddress = self.router.functions.WNativeToken().call()
         elif self.version == 3:
-            address = self.router.functions.WETH9().call()
+            try:
+                address = self.router.functions.WETH9().call()
+            except:
+                address: ChecksumAddress = self.router.functions.WNativeToken().call()
         else:
             raise ValueError  # pragma: no cover
 
